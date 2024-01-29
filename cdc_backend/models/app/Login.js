@@ -25,7 +25,7 @@ const Login = sequelize.define("login_user", {
                         type: DataTypes.STRING(191),
                         allowNull: false
             },
-            MOT_PASS: {
+            PASSWORD: {
                         type: DataTypes.STRING(191),
                         allowNull: false
             },

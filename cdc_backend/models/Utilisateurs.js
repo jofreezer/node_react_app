@@ -3,6 +3,7 @@ const sequelize = require('../utils/sequerize');
 const Fonction = require('./Fonction');
 const Sexes = require('./Sexes');
 const Profiles = require('./Profiles');
+// const Profil = require('./Profil')
 
 const Utilisateur = sequelize.define("utilisateurs", {
             UTIL_ID: {
@@ -64,7 +65,12 @@ const Utilisateur = sequelize.define("utilisateurs", {
                         type: DataTypes.TINYINT,
 
 
-            }
+            },
+            // ID_PROFIL: {
+            //             type: DataTypes.TINYINT,
+
+
+            // }
 },
             {
                         freezeTableName: true,
@@ -74,5 +80,6 @@ const Utilisateur = sequelize.define("utilisateurs", {
 Utilisateur.belongsTo(Fonction, { foreignKey: "FONCTION_ID", as: 'fonction' })
 Utilisateur.belongsTo(Profiles, { foreignKey: "PROFIL_ID", as: 'profiles' })
 Utilisateur.belongsTo(Sexes, { foreignKey: "SEXE_ID", as: 'sexes' })
+// Utilisateur.belongsTo(Profil, { foreignKey: "ID_PROFIL", as: 'profil' })
 
 module.exports = Utilisateur 
